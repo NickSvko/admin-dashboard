@@ -6,13 +6,6 @@
     font-family: Roboto, sans-serif;
 }
 
-.truncate {
-    width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
 body {
     height: 100vh;
     display: grid;
@@ -20,17 +13,6 @@ body {
     grid-template-areas: 
     'sidebar header'
     'sidebar main';
-}
-
-.sidebar {
-    grid-area: sidebar;
-    background-color: rgb(19, 138, 202);
-}
-
-.header {
-    grid-area: header;
-    background-color: white;
-    box-shadow: 0px 10px 3px;
 }
 
 .main {
@@ -73,7 +55,7 @@ body {
 }
 
 .card .info p {
-    opacity: 50%;
+    color: rgba(0, 0, 0, 0.5);
     margin-inline: 4%;
 }
 
@@ -133,7 +115,7 @@ body {
 
 .content .section p {
     font-size: 0.8rem;
-    opacity: 60%;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .section > * {
@@ -159,9 +141,14 @@ body {
 }
 
 .info .description {
-    opacity: 60%;
+    color: rgba(0, 0, 0, 0.6);
 }
 
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(19, 138, 202);
+}
 
 .sidebar .text {
     color: white;
@@ -199,4 +186,99 @@ body {
 
 .sidebar .top-tabs {
     margin-bottom: 4rem;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-inline: 2rem;
+    margin-bottom: 0.2rem;
+    box-shadow: 0px 3px 20px rgb(176, 170, 170);
+}
+
+.header img {
+    height: 1.3rem;
+}
+
+.header .top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'search navigation';
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.top .search {
+    grid-area: search;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+}
+
+.search .bar {
+    background-color: rgb(223, 228, 234);
+    border-radius: 15px;
+    height: 1.5rem;
+    margin-right: 4rem;
+}
+
+.header .navigation {
+    grid-area: navigation;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+    align-items: center;
+    font-weight: bold;
+}
+
+.navigation img#profile {
+    height: 2.5rem;
+}
+
+.header .bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'welcome buttons';
+    gap: 3rem;
+}
+
+.header .welcome {
+    grid-area: welcome;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.welcome img {
+    height: 4rem;
+}
+
+.welcome div {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.welcome .hi {
+    font-size: 0.8rem;
+    font-weight: lighter;
+    display: block;
+    padding-bottom: 0.3rem;
+}
+
+.header .buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    gap: 1rem;
+}
+
+.buttons > * {
+    background-color: rgb(19, 138, 202);;
+    border-radius: 15px;
+    color: white;
+    height: 2rem;
+    padding-inline: 1.5rem;
 }
